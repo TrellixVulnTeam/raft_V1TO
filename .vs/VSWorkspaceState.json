@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\raft",
+    "\\raft\\raft",
+    "\\raft\\search",
+    "\\raft\\search\\Classes",
+    "\\raft\\static",
+    "\\raft\\static\\css",
+    "\\raft\\static\\images",
+    "\\raft\\templates"
+  ],
+  "SelectedNode": "\\raft\\search\\views.py",
+  "PreviewInSolutionExplorer": false
+}
