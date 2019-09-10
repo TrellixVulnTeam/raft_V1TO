@@ -1,103 +1,44 @@
-﻿{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+﻿{% extends 'base.html' %}
 
-    <title>RAFT</title>
-    <link href="https://fonts.googleapis.com/css?family=Heebo:900|Open+Sans:400,500,600,700,800&display=swap" rel="stylesheet">
+{% block content %}
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css\main.css' %}">
+<div id="main-content">
 
-    <link rel="icon" href="{% static 'images\favicon.ico' %}">
-</head>
-
-<body>
-    <div class="container-fluid">
-
-        <div id="header">
-
+    <div class="row">
+        <div class="offset-sm-1 col-sm-11">
+            <h3 id="welcome-to-text">WELCOME TO</h3>
         </div>
-
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a href="/" class="navbar-brand">
-                <img src="{% static 'images\raft-logo.png' %}" id="raft-logo" alt="logo" height="45" />
-            </a>
-
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active px-4">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active px-4">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active px-4">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div id="main-content">
-
-            <div class="row">
-                <div class="offset-sm-1 col-sm-11">
-                    <h3 id="welcome-to-text">WELCOME TO</h3>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="offset-sm-1 col-sm-11">
-                    <h1 id="raft-text">RAFT.</h1>
-
-                </div>
-            </div>
-
-
-            <form method="post">
-                {% csrf_token %}
-                <div id="search-area" class="row">
-                    <div class="offset-sm-1 col-sm-6">
-                        {{ form.term }}
-                    </div>
-                    <div class="col-sm-2">
-                        {{ form.location }}
-                    </div>
-                    <div class="col-sm-1" align="center">
-                        <button id="search-button" class="btn btn-outline-warning btn-rounded btn-lg" type="submit">SEARCH</button>
-                    </div>
-                </div>
-            </form>
-
-            <br />
-            <h4 align="center" id="temp-results">
-                {{ name }}
-                <br />
-                {{ address }}
-            </h4>
-        </div>
-
-        <div class="row">
-            <div id="footer" class="offset-sm-10 col-sm-2" align="right">
-                <p>created by jonathan chen</p>
-            </div>
-        </div>
-
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <div class="row">
+        <div class="offset-sm-1 col-sm-11">
+            <h1 id="raft-text">RAFT.</h1>
+
+        </div>
+    </div>
 
 
+    <form method="post">
+        {% csrf_token %}
+        <div id="search-area" class="row">
+            <div class="offset-sm-1 col-sm-6">
+                {{ form.term }}
+            </div>
+            <div class="col-sm-2">
+                {{ form.location }}
+            </div>
+            <div class="col-sm-1" align="center">
+                <button id="search-button" class="btn btn-outline-warning btn-rounded btn-lg" type="submit">SEARCH</button>
+            </div>
+        </div>
+    </form>
 
-</body>
-</html>
+    <br />
+    <h4 align="center" id="temp-results">
+        {{ name }}
+        <br />
+        {{ address }}
+    </h4>
+</div>
+
+{% endblock %}

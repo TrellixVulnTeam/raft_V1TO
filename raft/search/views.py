@@ -65,4 +65,7 @@ def search(request, form):
         }
 
     return render(request, 'search.html', args)
+
+def about(request):
+    return render(request, 'about.html')
     

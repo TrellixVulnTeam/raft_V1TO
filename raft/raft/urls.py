@@ -18,6 +18,7 @@ from search import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('search/', views.search, name='home'),
-    path('admin/', admin.site.urls),
+    path('search', views.search, name='search'),
+    path('about', views.about, name='about'),
+    path('admin', admin.site.urls),
 ]
