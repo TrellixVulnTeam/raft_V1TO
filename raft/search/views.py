@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import redirect
 import random
 
 from .raftYelp import check_restaurants
@@ -9,9 +10,6 @@ from .forms import SearchForm
 
 # Create your views here.
 def home(request):
-    #location = 'san diego'
-    #cuisine = 'burgers'
-
     #potential_RAFTs = check_restaurants(location, cuisine)
     #num_RAFTs = len(potential_RAFTs)
     #rand_indexes = random.sample(range(num_RAFTs), num_RAFTs)
@@ -36,26 +34,33 @@ def home(request):
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
-            term = form.cleaned_data['term']
-            location = form.cleaned_data['location']
-
-            potential_RAFTs = check_restaurants(location, term)
-
-            num_RAFTs = len(potential_RAFTs)
-            random_index = random.randint(0, num_RAFTs - 1)
-
-            potential_RAFT = potential_RAFTs[random_index]
-            name = potential_RAFT.name
-            address = potential_RAFT.address
-
-            args = {
-                'form': form,
-                'name': name,
-                'address': address
-                }
-
-        return render(request, 'home.html', args)
+            return search(request, form)
     else:
         form = SearchForm(request.GET)
         return render(request, 'home.html', {'form': form})
+
+def search(request, form):
+    term = form.cleaned_data['term']
+    location = form.cleaned_data['location']
+
+    potential_RAFTs = check_restaurants(location, term)
+
+    num_RAFTs = len(potential_RAFTs)
+    random_index = random.randint(0, num_RAFTs - 1)
+
+    potential_RAFT = potential_RAFTs[random_index]
+    name = potential_RAFT.name
+    address = potential_RAFT.address
+    price = potential_RAFT.price
+    rating = potential_RAFT.rating
+
+    args = {
+        'form': form,
+        'name': name,
+        'address': address,
+        'price': price,
+        'rating': rating,
+        }
+
+    return render(request, 'search.html', args)
     

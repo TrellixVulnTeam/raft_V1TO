@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RAFT</title>
+    <link rel="stylesheet" href="{% static 'css\bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css\search.css' %}">
+
+    <link rel="icon" href="{% static 'images\favicon.ico' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Heebo:900|Open+Sans:400,500,600,700,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a href="/" class="navbar-brand">
+                <img src="{% static 'images\raft-logo.png' %}" id="raft-logo" alt="logo" height="45" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="collapsingNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="main-content">
+
+            <form method="post">
+                {% csrf_token %}
+                <div id="search-area" class="row">
+                    <div class="offset-lg-3 col-lg-4 offset-sm-1 col-sm-6">
+                        {{ form.term }}
+                    </div>
+                    <div class="col-lg-1 col-sm-2">
+                        {{ form.location }}
+                    </div>
+                    <div class="col-lg-1 col-sm-1">
+                        <button id="search-button" class="btn btn-outline-warning btn-rounded btn-md" type="submit">SEARCH</button>
+                    </div>
+                </div>
+            </form>
+
+            <br />
+            <div id="results">
+                <div class="row">
+                    <div class="offset-sm-1" id="name">
+                        {{ name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-sm-1" id="address">
+                        {{ address }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-sm-1" id="price-rating">
+                        {{ price }} &nbsp;| &nbsp;{{ rating }} &#9733; &#9733; &#9733; &#9733;
+
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div id="footer" class="offset-sm-10 col-sm-2" align="center">
+                <p>created by jonathan chen</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
