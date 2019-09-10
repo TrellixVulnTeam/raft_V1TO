@@ -10,6 +10,6 @@
     "\\raft\\static\\images",
     "\\raft\\templates"
   ],
-  "SelectedNode": "\\raft\\search\\views.py",
+  "SelectedNode": "\\raft\\search\\models.py",
   "PreviewInSolutionExplorer": false
 }
