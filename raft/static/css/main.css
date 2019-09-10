@@ -1,9 +1,14 @@
 body {
-    background-color: #00BBE4;
+    background: #00BBE4;
 }
 
 #main-content {
     margin-top: 15vh;
+}
+
+.navbar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 #welcome-to-text {
