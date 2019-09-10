@@ -1,6 +1,6 @@
 class RAFT:
     
-    def __init__(self, name, rating, num_reviews, location, categories, price):
+    def __init__(self, name, rating, num_reviews, location, categories, price, image_url):
         self.name = name
         self.rating = rating
         self.num_reviews = num_reviews
@@ -15,3 +15,5 @@ class RAFT:
         self.categories = []
         for category in categories:
             self.categories.append(category['title'])
+
+        self.image_url = image_url 

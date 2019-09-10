@@ -2,13 +2,13 @@ body {
     background: #00BBE4;
 }
 
-#main-content {
-    margin-top: 15vh;
-}
-
 .navbar {
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+
+#main-content {
+    margin-top: 15vh;
 }
 
 #welcome-to-text {
@@ -58,13 +58,4 @@ body {
     line-height: 60px;
     font-weight: 700;
     color: #EECA00;
-}
-
-@media (min-width: 768px) {
-    .navbar-brand.abs {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center;
-    }
 }

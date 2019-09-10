@@ -53,6 +53,7 @@ def search(request, form):
     address = potential_RAFT.address
     price = potential_RAFT.price
     rating = potential_RAFT.rating
+    image_url = potential_RAFT.image_url
 
     args = {
         'form': form,
@@ -60,6 +61,7 @@ def search(request, form):
         'address': address,
         'price': price,
         'rating': rating,
+        'image_url': image_url,
         }
 
     return render(request, 'search.html', args)

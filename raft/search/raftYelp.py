@@ -50,7 +50,7 @@ def check_restaurants(city, cuisine=None):
 
         if rating >= RATING_FILTER: # All RAFTS with lower than this rating will be discarded.
             # Creates a RAFT and adds it to the list of potential RAFTs.
-            temp_RAFT = RAFT(restaurant['name'], restaurant['rating'], restaurant['review_count'], restaurant['location'], restaurant['categories'], restaurant['price'])
+            temp_RAFT = RAFT(restaurant['name'], restaurant['rating'], restaurant['review_count'], restaurant['location'], restaurant['categories'], restaurant['price'], restaurant['image_url'])
             potential_RAFTS.append(temp_RAFT)
 
     return potential_RAFTS
