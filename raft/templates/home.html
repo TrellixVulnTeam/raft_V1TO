@@ -1,7 +1,6 @@
 ﻿{% extends 'base.html' %}
 
 {% block content %}
-
 <div id="main-content">
 
     <div class="row">
@@ -18,7 +17,7 @@
     </div>
 
 
-    <form method="post">
+    <form method="post" action="/search">
         {% csrf_token %}
         <div id="search-area" class="row">
             <div class="offset-sm-1 col-sm-6">
@@ -33,12 +32,5 @@
         </div>
     </form>
 
-    <br />
-    <h4 align="center" id="temp-results">
-        {{ name }}
-        <br />
-        {{ address }}
-    </h4>
 </div>
-
 {% endblock %}
