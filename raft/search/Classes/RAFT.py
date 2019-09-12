@@ -1,4 +1,4 @@
-class RAFT:
+class Raft:
     
     def __init__(self, name, rating, num_reviews, location, categories, price, image_url):
         self.name = name

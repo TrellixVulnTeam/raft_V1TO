@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 
 import random
 
-from .raftYelp import find_rafts
+from .raftYelp import find_rafts, generate_indexes
 from .models import ViewedRafts
 
 from .forms import SearchForm
@@ -28,20 +28,20 @@ def search(request):
         term = ''
         location = 'Seattle'
 
-    potential_RAFTs = find_rafts(location, term)
+    raft_list = find_rafts(location, term)
     
-    if not potential_RAFTs:
+    if not raft_list: # Executes if no restaurants are found.
         return render(request, 'search.html', { 'form': form, 'name': 'NO RESTUARANTS FOUND.'})
         
-    num_RAFTs = len(potential_RAFTs)
-    random_index = random.randint(0, num_RAFTs - 1)
+    random_indexes = generate_indexes(raft_list)
+    random_index = random_indexes[0]
 
-    potential_RAFT = potential_RAFTs[random_index]
-    name = potential_RAFT.name
-    address = potential_RAFT.address
-    price = potential_RAFT.price
-    rating = potential_RAFT.rating
-    image_url = potential_RAFT.image_url
+    raft = raft_list[random_index]
+    name = raft.name
+    address = raft.address
+    price = raft.price
+    rating = raft.rating
+    image_url = raft.image_url
 
     args = {
         'form': form,

@@ -1,6 +1,6 @@
 import requests
 import random
-from .Classes.RAFT import RAFT
+from .Classes.Raft import Raft
 
 # Personal API key - CHANGE FOR OTHER USERS
 MY_API_KEY = 'PWtLefiCtpdaBQWKdi_-lp5DmfDoBSxbNEOccgpBlKU0jAY00jM73eA44rAQlvSCWeILoDv0OBweMUaVLcAW_e-Q6Arblg6uGVjFkQ77cJJ1lQuLTCPdWdojWGFjXXYx'
@@ -40,17 +40,22 @@ def request(api_key, location, cuisine=None):
     
     return requests.get(url, headers=headers, params=url_params).json()
 
-# Determines, filters, and displays the RAFTS.
+# Determines, filters, and displays the rafts.
 def find_rafts(city, cuisine=None):
     restaurants = request(MY_API_KEY, city, cuisine)['businesses']
-    potential_RAFTS = []
+    raft_list = []
 
     for restaurant in restaurants:
         rating = restaurant['rating']
 
-        if rating >= RATING_FILTER: # All RAFTS with lower than this rating will be discarded.
-            # Creates a RAFT and adds it to the list of potential RAFTs.
-            temp_RAFT = RAFT(restaurant['name'], restaurant['rating'], restaurant['review_count'], restaurant['location'], restaurant['categories'], restaurant['price'], restaurant['image_url'])
-            potential_RAFTS.append(temp_RAFT)
+        if rating >= RATING_FILTER: # All rafts with lower than this rating will be discarded.
+            # Creates a raft and adds it to the list of rafts.
+            temp_raft = Raft(restaurant['name'], restaurant['rating'], restaurant['review_count'], restaurant['location'], restaurant['categories'], restaurant['price'], restaurant['image_url'])
+            raft_list.append(temp_raft)
 
-    return potential_RAFTS
+    return raft_list
+
+# Generates a list of random indexes.
+def generate_indexes(raft_list):
+    num_rafts = len(raft_list)
+    return random.sample(range(num_rafts), num_rafts - 1)
