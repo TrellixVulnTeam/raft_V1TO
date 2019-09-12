@@ -1,6 +1,6 @@
 ﻿{% extends 'base.html' %}
 {% block content %}
-<div id="main-content">
+<div id="search-content">
 
     <form method="post">
         {% csrf_token %}
@@ -12,25 +12,25 @@
                 {{ form.location }}
             </div>
             <div class="col-lg-1 col-sm-1">
-                <button id="search-button" class="btn btn-outline-warning btn-rounded btn-md" type="submit">SEARCH</button>
+                <button id="mini-search-button" class="btn btn-outline-warning btn-rounded btn-md" type="submit">SEARCH</button>
             </div>
         </div>
     </form>
 
     <br />
-    <div id="results">
+    <div id="raft-result">
         <div class="row">
-            <div class="offset-sm-1" id="name">
+            <div class="offset-sm-1" id="raft-name">
                 {{ name }}
             </div>
         </div>
         <div class="row">
-            <div class="offset-sm-1" id="address">
+            <div class="offset-sm-1" id="raft-address">
                 {{ address }}
             </div>
         </div>
         <div class="row">
-            <div class="offset-sm-1" id="price-rating">
+            <div class="offset-sm-1" id="raft-price-rating">
                 {{ price }} &nbsp;| &nbsp;{{ rating }} &#9733; &#9733; &#9733; &#9733;
 
             </div>

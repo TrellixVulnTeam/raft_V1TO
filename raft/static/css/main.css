@@ -7,8 +7,12 @@ body {
     padding-right: 0 !important;
 }
 
-#main-content {
+#home-content {
     margin-top: 15vh;
+}
+
+#search-content {
+    margin-top: 2vh;
 }
 
 #welcome-to-text {
@@ -34,9 +38,21 @@ body {
     font-size: 20px;
 }
 
+#mini-term-form {
+    margin-left: .5vw;
+    height: 40px;
+    font-size: 15px;
+}
+
 #location-form {
     height: 50px;
     font-size: 20px;
+    font-weight: 700;
+}
+
+#mini-location-form {
+    height: 40px;
+    font-size: 15px;
     font-weight: 700;
 }
 
@@ -46,8 +62,36 @@ body {
     height: 50px;
 }
 
-#temp-results {
+#mini-search-button {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    height: 40px;
+}
+
+#raft-result {
+    margin-top: 5vh;
+}
+
+#raft-name {
     color: white;
+    font-family: 'Heebo', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 4vw;
+    margin-bottom: -2vh;
+}
+
+#raft-address {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5vw;
+}
+
+
+#raft-price-rating {
+    color: white;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.5vw;
 }
 
 #footer {
