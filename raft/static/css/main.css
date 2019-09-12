@@ -28,13 +28,13 @@ body {
     letter-spacing: 5px;
 }
 
-#id_term {
-    margin-left: .5vw;
+#term-form {
     height: 50px;
+    margin-left: .5vw;
     font-size: 20px;
 }
 
-#id_location {
+#location-form {
     height: 50px;
     font-size: 20px;
     font-weight: 700;

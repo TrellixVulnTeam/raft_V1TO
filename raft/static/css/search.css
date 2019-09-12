@@ -6,13 +6,13 @@ body {
     margin-top: 2vh;
 }
 
-#id_term {
+#mini-term-form {
     margin-left: .5vw;
     height: 40px;
     font-size: 15px;
 }
 
-#id_location {
+#mini-location-form {
     height: 40px;
     font-size: 15px;
     font-weight: 700;

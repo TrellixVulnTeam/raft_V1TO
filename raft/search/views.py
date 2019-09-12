@@ -15,11 +15,11 @@ def home(request):
 
     #rafts = ViewedRafts.objects.all()
     
-    form = SearchForm(request.GET)
+    form = SearchForm(request.GET, auto_id="%s-form")
     return render(request, 'home.html', {'form': form})
 
 def search(request):
-    form = SearchForm(request.POST)
+    form = SearchForm(request.POST, auto_id="mini-%s-form")
 
     if form.is_valid():
         term = form.cleaned_data['term']
