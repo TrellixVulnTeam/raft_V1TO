@@ -13,8 +13,8 @@ SEARCH_PATH = '/businesses/search'
 SEARCH_LIMIT = 20 # Number of restaurants to return.
 RADIUS = 8000 # Radius from the specified location in meters.
 OPEN_NOW = True # Returns restaurants that are open only at the current moment.
-PRICE = '1,2,3,4' # Price filter for restaurants (1 = $, 2 = $$...)
-RATING_FILTER = 3
+PRICE = '1,2,3,4' # Price filter for restaurants (1 = $, 2 = $$...).
+RATING_FILTER = 3 # Rating filter for restaurants.
 # --------------------------------------------------------------------------
 
 default_location = 'Seattle'
@@ -41,7 +41,7 @@ def request(api_key, location, cuisine=None):
     return requests.get(url, headers=headers, params=url_params).json()
 
 # Determines, filters, and displays the RAFTS.
-def check_restaurants(city, cuisine=None):
+def find_rafts(city, cuisine=None):
     restaurants = request(MY_API_KEY, city, cuisine)['businesses']
     potential_RAFTS = []
 
@@ -54,10 +54,3 @@ def check_restaurants(city, cuisine=None):
             potential_RAFTS.append(temp_RAFT)
 
     return potential_RAFTS
-
-    #num_RAFTs = len(potential_RAFTS)
-    #if num_RAFTs > 1: # Executes only if there is at least one restaurant that matches the filters. 
-    #    random_indexes = random.sample(range(num_RAFTs), num_RAFTs) # A list of random indexes that correspond to different RAFTs
-    #    display_RAFT(potential_RAFTS, random_indexes, num_RAFTs)
-    #else:
-    #    print("No " + cuisine + " restaurants found in " + city + " with the provided filters. ")

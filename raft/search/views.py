@@ -1,30 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
+
 import random
 
-from .raftYelp import check_restaurants
+from .raftYelp import find_rafts
 from .models import ViewedRafts
 
 from .forms import SearchForm
 
 def home(request):
-    #potential_RAFTs = check_restaurants(location, cuisine)
-    #num_RAFTs = len(potential_RAFTs)
-    #rand_indexes = random.sample(range(num_RAFTs), num_RAFTs)
-
-    #potential_RAFT = potential_RAFTs[0]
-
-    #name = potential_RAFT.name
-    #rating = potential_RAFT.rating
-    #num_reviews = potential_RAFT.num_reviews
-    #price = len(potential_RAFT.price)
-
-    #address = potential_RAFT.address
-    #city = potential_RAFT.city
-    #state = potential_RAFT.state
-    #zip_code = potential_RAFT.zip_code
-
     #ViewedRafts.objects.create(name=name, rating=rating, num_reviews=num_reviews, price=price,
                                #address=address, city=city, state=state, zip_code=zip_code)
 
@@ -43,7 +28,7 @@ def search(request):
         term = ''
         location = 'Seattle'
 
-    potential_RAFTs = check_restaurants(location, term)
+    potential_RAFTs = find_rafts(location, term)
 
     num_RAFTs = len(potential_RAFTs)
     random_index = random.randint(0, num_RAFTs - 1)
