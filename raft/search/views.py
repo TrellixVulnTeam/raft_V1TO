@@ -29,7 +29,10 @@ def search(request):
         location = 'Seattle'
 
     potential_RAFTs = find_rafts(location, term)
-
+    
+    if not potential_RAFTs:
+        return render(request, 'search.html', { 'form': form, 'name': 'NO RESTUARANTS FOUND.'})
+        
     num_RAFTs = len(potential_RAFTs)
     random_index = random.randint(0, num_RAFTs - 1)
 
