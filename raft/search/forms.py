@@ -1,7 +1,7 @@
 from django import forms
 
 class SearchForm(forms.Form):
-    term = forms.CharField(widget=forms.TextInput(
+    term = forms.CharField(required=False, widget=forms.TextInput(
         attrs={
             'class': 'form-control',
             'placeholder': "Enter a cuisine, food or keyword."

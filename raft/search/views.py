@@ -39,31 +39,33 @@ def search(request):
     if form.is_valid():
         term = form.cleaned_data['term']
         location = form.cleaned_data['location']
-
-        potential_RAFTs = check_restaurants(location, term)
-
-        num_RAFTs = len(potential_RAFTs)
-        random_index = random.randint(0, num_RAFTs - 1)
-
-        potential_RAFT = potential_RAFTs[random_index]
-        name = potential_RAFT.name
-        address = potential_RAFT.address
-        price = potential_RAFT.price
-        rating = potential_RAFT.rating
-        image_url = potential_RAFT.image_url
-
-        args = {
-            'form': form,
-            'name': name,
-            'address': address,
-            'price': price,
-            'rating': rating,
-            'image_url': image_url,
-            }
-
-        return render(request, 'search.html', args)
     else:
-        return render(request, 'search.html', {'form': form})
+        term = ''
+        location = 'Seattle'
+
+    potential_RAFTs = check_restaurants(location, term)
+
+    num_RAFTs = len(potential_RAFTs)
+    random_index = random.randint(0, num_RAFTs - 1)
+
+    potential_RAFT = potential_RAFTs[random_index]
+    name = potential_RAFT.name
+    address = potential_RAFT.address
+    price = potential_RAFT.price
+    rating = potential_RAFT.rating
+    image_url = potential_RAFT.image_url
+
+    args = {
+        'form': form,
+        'name': name,
+        'address': address,
+        'price': price,
+        'rating': rating,
+        'image_url': image_url,
+        }
+
+    return render(request, 'search.html', args)
+
 
 def about(request):
     return render(request, 'about.html')
