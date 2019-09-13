@@ -59,3 +59,14 @@ def find_rafts(city, cuisine=None):
 def generate_indexes(raft_list):
     num_rafts = len(raft_list)
     return random.sample(range(num_rafts), num_rafts - 1)
+
+# Creates the arguments to be passed to the "search" view.
+def create_args(raft):
+    args = {
+    'name': raft.name,
+    'address': raft.address,
+    'price': raft.price,
+    'rating': raft.rating,
+    'image_url': raft.image_url
+    }
+    return args
