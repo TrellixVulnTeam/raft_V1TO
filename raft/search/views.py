@@ -21,10 +21,10 @@ def home(request):
 def search(request):
     form = SearchForm(request.POST, auto_id="mini-%s-form")
 
-    if form.is_valid():
+    if form.is_valid(): 
         term = form.cleaned_data['term']
         location = form.cleaned_data['location']
-    else:
+    else: # If '/search' is manually entered in the url.
         term = ''
         location = 'Seattle'
 
@@ -42,7 +42,17 @@ def search(request):
     return render(request, 'search.html', args)
 
 def about(request):
-    return render(request, 'about.html')
+    testList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    index = 0
+
+    if request.GET:
+        index += 1
+
+    number = testList[index]
+
+    args = {'number': number}
+
+    return render(request, 'about.html', args)
 
 def contact(request):
     return render(request, 'contact.html')

@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div align="center">
-        <h3 id="welcome-to-text">About Page</h3>
+<div class="row">
+    <div class="col-sm-12" align="center">
+        {{ number }}
+    </div>
 </div>
+
+<form action="/about" method="get">
+    <div class="row">
+        <div class="col-sm-1">
+            <button>Next</button>
+        </div>
+        <div class="col-sm-1">
+            <button>Previous</button>
+        </div>
+    </div>
+</form>
 {% endblock %}
