@@ -44,12 +44,12 @@ def search(request):
 
 def about(request):
     raft_list = find_rafts('seattle', 'chinese')
-    json_string = json.dumps(raft_list[0].__dict__, indent=4)
+    json_string = json.dumps([raft.__dict__ for raft in raft_list], indent=4)
 
     args = {
         'string': json_string
     }
-    
+
     return render(request, 'about.html', args)
 
 def contact(request):
