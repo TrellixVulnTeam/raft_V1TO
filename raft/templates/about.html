@@ -2,20 +2,11 @@
 
 {% block content %}
 
-{{ string|json_script:"raft"}}
-
-<script>
-    var value = JSON.parse(document.getElementById('raft').textContent);
-
-    console.log(value)
-
-    
-</script>
-
+{{ list|json_script:"rafts_json"}}
 
 <div class="row">
     <div class="col-sm-12" align="center">
-        
+        <h1 id='test1'></h1>
     </div>
 </div>
 
@@ -27,5 +18,13 @@
         <button>Previous</button>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    var value = JSON.parse(JSON.parse(document.getElementById('rafts_json').textContent));
+    console.log(value);
+
+    document.getElementById('test1').innerHTML = value[0].name;
+</script>
 
 {% endblock %}
