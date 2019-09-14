@@ -12,19 +12,32 @@
 
 <div class="row">
     <div class="col-sm-1">
-        <button>Next</button>
+        <button onclick="test('next')">Next</button>
     </div>
     <div class="col-sm-1">
-        <button>Previous</button>
+        <button onclick="test('prev')">Previous</button>
     </div>
 </div>
 
 
-<script type="text/javascript">
+<script>
     var value = JSON.parse(JSON.parse(document.getElementById('rafts_json').textContent));
     console.log(value);
+    var i = 0;
+    document.getElementById('test1').innerHTML = value[i].name;
 
-    document.getElementById('test1').innerHTML = value[0].name;
+    function test(param) {
+
+
+        if (param === 'next') {
+            i = (((i + 1) % 20) + 20) % 20;   
+        } else {
+            i = (((i - 1) % 20) + 20) % 20;   
+        }
+        document.getElementById('test1').innerHTML = value[i].name;
+    }
+
+
 </script>
 
 {% endblock %}
