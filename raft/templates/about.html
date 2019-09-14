@@ -1,20 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{{ string|json_script:"raft"}}
+
+<script>
+    var value = JSON.parse(document.getElementById('raft').textContent);
+
+    console.log(value)
+
+    
+</script>
+
+
 <div class="row">
     <div class="col-sm-12" align="center">
-        {{ number }}
+        
     </div>
 </div>
 
-<form action="/about" method="get">
-    <div class="row">
-        <div class="col-sm-1">
-            <button>Next</button>
-        </div>
-        <div class="col-sm-1">
-            <button>Previous</button>
-        </div>
+<div class="row">
+    <div class="col-sm-1">
+        <button>Next</button>
     </div>
-</form>
+    <div class="col-sm-1">
+        <button>Previous</button>
+    </div>
+</div>
+
 {% endblock %}

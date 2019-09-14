@@ -17,3 +17,6 @@ class Raft:
             self.categories.append(category['title'])
 
         self.image_url = image_url 
+
+    def __str__(self):
+        return self.name

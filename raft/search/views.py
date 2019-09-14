@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 
 import random
+import json
 
 from .raftYelp import find_rafts, generate_indexes, create_args
 from .models import ViewedRafts
@@ -42,16 +43,13 @@ def search(request):
     return render(request, 'search.html', args)
 
 def about(request):
-    testList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    index = 0
+    raft_list = find_rafts('seattle', 'chinese')
+    json_string = json.dumps(raft_list[0].__dict__, indent=4)
 
-    if request.GET:
-        index += 1
-
-    number = testList[index]
-
-    args = {'number': number}
-
+    args = {
+        'string': json_string
+    }
+    
     return render(request, 'about.html', args)
 
 def contact(request):
