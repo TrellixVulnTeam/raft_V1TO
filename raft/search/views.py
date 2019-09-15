@@ -36,9 +36,13 @@ def search(request):
         
     random_indexes = generate_indexes(raft_list)
     raft = raft_list[random_indexes[0]]
+    num_rafts = len(random_indexes) + 1
 
-    args = create_args(raft)
-    args['form'] = form
+    args = {
+        'raft_list': json.dumps([raft.__dict__ for raft in raft_list], indent=4),
+        'num_rafts': num_rafts,
+        'form': form,
+    }
 
     return render(request, 'search.html', args)
 

@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="offset-sm-1 col-sm-4">
+            <div class="offset-sm-1 col-sm-6">
                 <h2 id="raft-address">{{ address }}</h2>
             </div>
         </div>
@@ -37,25 +37,41 @@
 
     <br>
 
-    <!-- <script>
-        function showNext(param) {
-            {{ raft_list|json_script:"raft_list" }}
-            var list = JSON.parse(document.getElementById('words_list').textContent);
-            var i = 0;
-            console.log(list[0])
-        }
-    </script> -->
-
     <div id="previous-next">
         <div class="row">
             <div class="offset-sm-1 col-sm-1">
-                <button>Previous</button>
+                <button class="btn btn-secondary" onclick="nextPrev('prev')">Previous</button>
             </div>
             <div class="col-sm-1">
-                <button>Next</button>
+                <button class="btn btn-primary" onclick="nextPrev('next')">Next</button>
             </div>
         </div>
     </div>
 
 </div>
+
+{{ raft_list|json_script:"rafts_json"}}
+
+<script>
+    var len = {{ num_rafts }}
+    var json = JSON.parse(JSON.parse(document.getElementById('rafts_json').textContent));
+    console.log(json)
+    var i = 0;
+    document.getElementById('raft-name').innerHTML = json[i].name;
+    document.getElementById('raft-address').innerHTML = json[i].address;
+    document.getElementById('raft-price-rating').innerHTML = json[i].price + " | " + json[i].rating + " ";
+
+    function nextPrev(param) {
+        if (param === 'next') {
+            i = (((i + 1) % len) + len) % len;  
+        } else {
+            i = (((i - 1) % len) + len) % len;   
+        }
+        document.getElementById('raft-name').innerHTML = json[i].name;
+        document.getElementById('raft-address').innerHTML = json[i].address;
+        document.getElementById('raft-price-rating').innerHTML = json[i].price + " | " + json[i].rating + " ";
+    }
+
+</script>
+
 {% endblock %}
