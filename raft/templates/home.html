@@ -38,13 +38,15 @@
 
 </div>
 
+{% csrf_token %}
 <script>
     function getLocation() {
         if (navigator.geolocation) {
+            
             position = navigator.geolocation.getCurrentPosition(function(position) {
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
-                console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+                console.log("Latitude: " + latitude + " Longitude: " + longitude);
             });
         } else {
             alert("Geolocation is not supported by this browser.")
