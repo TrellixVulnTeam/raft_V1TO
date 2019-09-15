@@ -56,6 +56,17 @@ body {
     font-weight: 700;
 }
 
+#location-button {
+    padding-top: 1vh;
+}
+
+#use-my-location {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    height: 34px;
+    line-height: 17px;
+}
+
 #search-button {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;

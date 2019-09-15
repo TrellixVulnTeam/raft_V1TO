@@ -12,32 +12,21 @@
 
 <div class="row">
     <div class="col-sm-1">
-        <button onclick="test('next')">Next</button>
-    </div>
-    <div class="col-sm-1">
-        <button onclick="test('prev')">Previous</button>
+        <button onclick="getLocation()">Location</button>
     </div>
 </div>
 
 
 <script>
-    var value = JSON.parse(JSON.parse(document.getElementById('rafts_json').textContent));
-    console.log(value);
-    var i = 0;
-    document.getElementById('test1').innerHTML = value[i].name;
-
-    function test(param) {
-
-
-        if (param === 'next') {
-            i = (((i + 1) % 20) + 20) % 20;   
+    function getLocation() {
+        if (navigator.geolocation) {
+            position = navigator.geolocation.getCurrentPosition(function(position) {
+                console.log(position);
+            });
         } else {
-            i = (((i - 1) % 20) + 20) % 20;   
+            console.log("geolocation not supported by this browser");
         }
-        document.getElementById('test1').innerHTML = value[i].name;
     }
-
-
 </script>
 
 {% endblock %}

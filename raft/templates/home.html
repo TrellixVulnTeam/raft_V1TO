@@ -25,10 +25,30 @@
                 {{ form.location }}
             </div>
             <div class="col-sm-1">
-                <button id="search-button" class="btn btn-outline-warning btn-rounded btn-lg" type="submit">SEARCH</button>
+                    <button id="search-button" class="btn btn-outline-warning btn-rounded btn-lg" type="submit">SEARCH</button>
             </div>
         </div>
     </form>
 
+    <div class="row">
+        <div class="offset-sm-7 col-sm-2" id="location-button">
+            <button onclick="getLocation()" class="btn btn-block btn-success btn-rounded" id="use-my-location">USE MY LOCATION</button>
+        </div>
+    </div>
+
 </div>
+
+<script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            position = navigator.geolocation.getCurrentPosition(function(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.")
+        }
+    }
+</script>
 {% endblock %}

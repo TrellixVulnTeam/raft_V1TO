@@ -20,17 +20,17 @@
     <div id="raft-result">
         <div class="row">
             <div class="offset-sm-1 col-sm-9">
-                <h1 id="raft-name">{{ name }}</h1>
+                <h1 id="raft-name"></h1>
             </div>
         </div>
         <div class="row">
             <div class="offset-sm-1 col-sm-6">
-                <h2 id="raft-address">{{ address }}</h2>
+                <h2 id="raft-address"></h2>
             </div>
         </div>
         <div class="row">
             <div class="offset-sm-1 col-sm-4" id="raft-price-rating">
-                <h2 id="raft-price-rating">{{ price }} &nbsp;| &nbsp;{{ rating }} &#9733;</h2>
+                <h2 id="raft-price-rating"></h2>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
     <div id="previous-next">
         <div class="row">
             <div class="offset-sm-1 col-sm-1">
-                <button class="btn btn-secondary" onclick="nextPrev('prev')">Previous</button>
+                <button class="btn btn-success" onclick="nextPrev('prev')">Previous</button>
             </div>
             <div class="col-sm-1">
                 <button class="btn btn-primary" onclick="nextPrev('next')">Next</button>
@@ -59,7 +59,7 @@
     var i = 0;
     document.getElementById('raft-name').innerHTML = json[i].name;
     document.getElementById('raft-address').innerHTML = json[i].address;
-    document.getElementById('raft-price-rating').innerHTML = json[i].price + " | " + json[i].rating + " ";
+    document.getElementById('raft-price-rating').innerHTML = json[i].price + " | " + json[i].rating + " &#9733;";
 
     function nextPrev(param) {
         if (param === 'next') {
@@ -69,7 +69,7 @@
         }
         document.getElementById('raft-name').innerHTML = json[i].name;
         document.getElementById('raft-address').innerHTML = json[i].address;
-        document.getElementById('raft-price-rating').innerHTML = json[i].price + " | " + json[i].rating + " ";
+        document.getElementById('raft-price-rating').innerHTML = json[i].price + " | " + json[i].rating + " &#9733;";
     }
 
 </script>
