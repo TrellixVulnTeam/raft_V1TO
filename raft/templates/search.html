@@ -4,22 +4,22 @@
 
     <form method="post">
         {% csrf_token %}
-        <div id="search-area" class="row">
-            <div class="offset-lg-2 col-lg-5 offset-sm-1 col-sm-6">
+        <div class="row">
+            <div class="col-sm-12 offset-md-2 col-md-4 offset-lg-2 col-lg-4">
                 {{ form.term }}
             </div>
-            <div class="col-lg-2 col-sm-2">
+            <div class="col-sm-9 col-md-2 col-lg-2">
                 {{ form.location }}
             </div>
-            <div class="col-lg-1 col-sm-1">
-                <button id="mini-search-button" class="btn btn-outline-warning btn-rounded btn-md" type="submit">SEARCH</button>
+            <div class="col-sm-3 col-md-2 col-lg-2">
+                <button id="mini-search-button" class="btn btn-outline-warning btn-rounded btn-md btn-block" type="submit">SEARCH</button>
             </div>
         </div>
     </form>
 
     <div id="raft-result">
         <div class="row">
-            <div class="offset-sm-1 col-sm-9">
+            <div class="offset-sm-1 col-sm-10">
                 <h1 id="raft-name"></h1>
             </div>
         </div>
@@ -35,15 +35,13 @@
         </div>
     </div>
 
-    <br>
-
     <div id="previous-next">
         <div class="row">
-            <div class="offset-sm-1 col-sm-1">
-                <button class="btn btn-success" onclick="nextPrev('prev')">Previous</button>
+            <div class="offset-sm-1 col-sm-3">
+                <button class="btn btn-success btn-lg btn-block" onclick="nextPrev('prev')">&lt;&lt; PREV</button>
             </div>
-            <div class="col-sm-1">
-                <button class="btn btn-primary" onclick="nextPrev('next')">Next</button>
+            <div class="offset-sm-4 col-sm-3">
+                <button class="btn btn-success btn-lg btn-block" onclick="nextPrev('next')">NEXT &gt;&gt; </button>
             </div>
         </div>
     </div>

@@ -36,6 +36,7 @@ body {
 }
 
 #mini-term-form {
+    margin-left: .5vw;
     height: 40px;
     font-size: 15px;
 }
@@ -67,14 +68,12 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     height: 50px;
-    border: 3px solid #EECA00;
 }
 
 #mini-search-button {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     height: 40px;
-    border: 2px solid #EECA00;
 }
 
 #raft-result {
@@ -82,30 +81,25 @@ body {
 }
 
 #raft-name {
-    color: #EECA00;
+    color: white;
     font-family: 'Heebo', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 4vw;
-    line-height: 4vw;
-    margin-bottom: -.75vh;
+    margin-bottom: -1vh;
 }
 
 #raft-address {
     color: white;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.75vw;
-    margin-bottom: 0px;
+    font-size: 1.5vw;
 }
+
 
 #raft-price-rating {
     color: white;
     font-family: 'Heebo', sans-serif;
-    font-size: 1.75vw;
-}
-
-#previous-next {
-    margin-top: 15vh;
+    font-size: 1.5vw;
 }
 
 #footer {
@@ -118,7 +112,6 @@ body {
     color: #EECA00;
 }
 
-/* Laptop-size screens */
 @media screen and (max-width:1200px) {
     #welcome-to-text {
         font-size: 3.5vw;
@@ -128,39 +121,8 @@ body {
         margin: -3.5vw 0vw -3vw -.5vw;
         font-size: 16vw;
     }
-
-    #term-form {
-        height: 45px;
-        font-size: 20px;
-    }
-
-    #location-form {
-        height: 45px;
-        font-size: 20px;
-        font-weight: 700;
-    }
-    
-    #search-button {
-        height: 45px;
-        line-height: 22.5px;
-    }
-
-    #raft-name {
-        font-size: 5vw;
-        line-height: 4.5vw;
-        margin-bottom: -.25vh;
-    }
-
-    #raft-address {
-        font-size: 2vw;
-    }
-
-    #raft-price-rating {
-        font-size: 2vw;
-    }
 }
 
-/* Tablet-size screens */
 @media screen and (max-width:767px) {
     #welcome-to-text {
         font-size: 5vw;
@@ -175,38 +137,13 @@ body {
         margin: 2vw 0vw 2vw 0vw;
     }
 
+
     #footer {
         text-align: center;
-        font-size: 1.5vh;
-    }
-
-    #search-div {
-        text-align: right;
-    }
-
-    #raft-name {
-        font-size: 7vw;
-        line-height: 6vw;
-    }
-
-    #raft-address {
-        font-size: 3vw;
-    }
-
-    #raft-price-rating {
-        font-size: 3vw;
-    }
-
-    #mini-term-form {
-        margin-bottom: 1vw;
-    }
-
-    #mini-location-form {
-        margin-bottom: 1vw;
+        font-size: 3vh;
     }
 }
 
-/* Phone-size screens */
 @media screen and (max-width:575px) {
     #welcome-to-text {
         font-size: 6.5vw;
@@ -217,17 +154,5 @@ body {
         font-size: 30vw;
     }
 
-    #raft-name {
-        font-size: 9vw;
-        line-height: 8vw;
-    }
-
-    #raft-address {
-        font-size: 4vw;
-    }
-
-    #raft-price-rating {
-        font-size: 4vw;
-    }
 
 }

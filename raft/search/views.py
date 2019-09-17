@@ -16,10 +16,8 @@ def home(request):
 
     #rafts = ViewedRafts.objects.all()
 
-    if request.method == "POST":
-        latitude = request.POST['latitude']
-        longitude = request.POST['longitude']
-        return HttpResponse(latitude)
+    if request.GET.get('get-location'):
+        return HttpResponse("clicked button")
     
     form = SearchForm(request.GET, auto_id="%s-form")
     return render(request, 'home.html', {'form': form})

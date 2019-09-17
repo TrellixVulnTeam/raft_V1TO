@@ -11,7 +11,6 @@ class SearchForm(forms.Form):
         attrs={
             'class': 'form-control',
             'placeholder': "Location",
-            'value': 'SEATTLE, WA'
         }
     ))
     
