@@ -1,4 +1,4 @@
-/* Shared by all pages */
+/* ---------------------------- All Pages ---------------------------- */
 body {
     background: #00BBE4;
 }
@@ -22,6 +22,11 @@ footer {
     padding-right: 0 !important;
 }
 
+.highlight {
+    color: #EECA00;
+}
+
+/* ---------------------------- Home Page ---------------------------- */
 .slider {
     -webkit-appearance: none;
     width: 100%;
@@ -58,10 +63,6 @@ footer {
     margin-top: 15vh;
 }
 
-#search-content {
-    margin-top: 2vh;
-}
-
 #welcome-to-text {
     color: #EECA00;
     font-family: 'Open Sans', sans-serif;
@@ -82,32 +83,10 @@ footer {
     font-size: 20px;
 }
 
-#mini-term-form {
-    height: 40px;
-    font-size: 15px;
-}
-
 #location-form {
     height: 50px;
     font-size: 20px;
     font-weight: 700;
-}
-
-#mini-location-form {
-    height: 40px;
-    font-size: 15px;
-    font-weight: 700;
-}
-
-#location-button {
-    padding-top: 1vh;
-}
-
-#use-my-location {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    height: 34px;
-    line-height: 17px;
 }
 
 #search-button {
@@ -115,6 +94,22 @@ footer {
     font-weight: 800;
     height: 50px;
     border: 3px solid #EECA00;
+}
+
+/* ---------------------------- Search Page ---------------------------- */
+#search-content {
+    margin-top: 2vh;
+}
+
+#mini-term-form {
+    height: 40px;
+    font-size: 15px;
+}
+
+#mini-location-form {
+    height: 40px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 #mini-search-button {
@@ -155,6 +150,7 @@ footer {
     margin-top: 15vh;
 }
 
+/* ---------------------------- About Page ---------------------------- */
 #about-content {
     margin-top: 6vh;
 }
@@ -166,12 +162,27 @@ footer {
     color: white;
 }   
 
-#highlight {
-    color: #EECA00;
+/* ---------------------------- Contact Page ---------------------------- */
+#contact-content {
+    margin-top: 6vh;
 }
 
-/* Laptop-size screens */
+/* ---------------------------- Graveyard ---------------------------- */
+#location-button {
+    padding-top: 1vh;
+}
+
+#use-my-location {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    height: 34px;
+    line-height: 17px;
+}
+
+/* ---------------------------- Laptops Screens ---------------------------- */
 @media screen and (max-width:1200px) {
+
+    /* ----- Home Page ----- */
     #welcome-to-text {
         font-size: 3.5vw;
     }
@@ -197,6 +208,7 @@ footer {
         line-height: 22.5px;
     }
 
+    /* ----- Search Page ----- */
     #raft-name {
         font-size: 5vw;
         line-height: 4.5vw;
@@ -212,8 +224,10 @@ footer {
     }
 }
 
-/* Tablet-size screens */
+/* ---------------------------- Tablet Screens ---------------------------- */
 @media screen and (max-width:767px) {
+
+    /* ----- All Pages ----- */
     footer {
         text-align: center;
         font-size: 2vh;
@@ -222,7 +236,8 @@ footer {
     #welcome-to-text {
         font-size: 5vw;
     }
-    
+
+    /* ----- All Pages ----- */
     #raft-text {
         margin: -5.5vw 0vw -4.5vw -1vw;
         font-size: 25vw;
@@ -234,6 +249,15 @@ footer {
 
     #search-div {
         text-align: right;
+    }
+
+    /* ----- Search Page ----- */
+    #mini-term-form {
+        margin-bottom: 1vw;
+    }
+
+    #mini-location-form {
+        margin-bottom: 1vw;
     }
 
     #raft-name {
@@ -248,18 +272,11 @@ footer {
     #raft-price-rating {
         font-size: 3vw;
     }
-
-    #mini-term-form {
-        margin-bottom: 1vw;
-    }
-
-    #mini-location-form {
-        margin-bottom: 1vw;
-    }
 }
 
-/* Phone-size screens */
+/* ---------------------------- Smartphone Screens ---------------------------- */
 @media screen and (max-width:575px) {
+    /* ----- Home Page ----- */
     #welcome-to-text {
         font-size: 6.5vw;
     }
@@ -269,6 +286,7 @@ footer {
         font-size: 30vw;
     }
 
+    /* ----- Search Page ----- */
     #raft-name {
         font-size: 9vw;
         line-height: 8vw;
