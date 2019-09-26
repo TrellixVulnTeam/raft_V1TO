@@ -10,6 +10,7 @@ from .models import ViewedRafts
 
 from .forms import SearchForm
 
+# Homepage View
 def home(request):
     if request.GET.get('get-location'):
         return HttpResponse("clicked button")
@@ -17,6 +18,7 @@ def home(request):
     form = SearchForm(request.GET, auto_id="%s-form")
     return render(request, 'home.html', {'form': form})
 
+# Search Page View
 def search(request):
     form = SearchForm(request.POST, auto_id="mini-%s-form")
 
@@ -44,6 +46,7 @@ def search(request):
 
     return render(request, 'search.html', args)
 
+# About Page View
 def about(request):
     raft_list = find_rafts('seattle', 'chinese')
     rafts_json = json.dumps([raft.__dict__ for raft in raft_list], indent=4)
@@ -54,6 +57,7 @@ def about(request):
 
     return render(request, 'about.html', args)
 
+# Contact Page View
 def contact(request):
     return render(request, 'contact.html')
     

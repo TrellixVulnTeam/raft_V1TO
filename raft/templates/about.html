@@ -4,15 +4,30 @@
 
 {{ list|json_script:"rafts_json"}}
 
-<div class="row">
-    <div class="col-sm-12" align="center">
-        <h1 id='test1'></h1>
+<div id="about-content">
+    <div class="row">
+        <div class="offset-sm-1 col-sm-10">
+            <h1 class="header-text">ABOUT US</h1>
+        </div>
     </div>
-</div>
+    <div class="row">
+        <div class="offset-sm-1 col-sm-10">
+            <p id="about-us">
+                <span id="highlight">RAFT</span>, or "<span id="highlight">Randomly Assign/Find Tables</span>", 
+                is a website that simplifies the process of discovering new restaurants. Whether you're vacationing, on a 
+                business trip, or just want to explore new local places, your next meal is only one click away. 
+                <br>
+                <br>
+                RAFT is dedicated to the adventurous foodies, broke college students, and indecisive couples of this world. 
+                I hope you enjoy it as much as I do!
+            </p>
+        </div>
+    </div>
 
-<div class="row">
-    <div class="col-sm-1">
-        <button onclick="getLocation()">Location</button>
+    <div class="row">
+        <div class="col-sm-1">
+            <button onclick="getLocation()">Location</button>
+        </div>
     </div>
 </div>
 

@@ -1,3 +1,4 @@
+/* Shared by all pages */
 body {
     background: #00BBE4;
 }
@@ -7,6 +8,13 @@ footer {
     text-align: right;
     font-weight: 700;
     color: #EECA00;
+}
+
+.header-text {
+    color: #EECA00;
+    font-family: 'Heebo', sans-serif;
+    font-size: 6vw;
+    margin-bottom: -15px;
 }
 
 .navbar {
@@ -145,6 +153,21 @@ footer {
 
 #previous-next {
     margin-top: 15vh;
+}
+
+#about-content {
+    margin-top: 6vh;
+}
+
+#about-us {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    color: white;
+}   
+
+#highlight {
+    color: #EECA00;
 }
 
 /* Laptop-size screens */
