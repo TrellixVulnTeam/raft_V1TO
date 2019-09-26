@@ -14,7 +14,7 @@ SEARCH_LIMIT = 20 # Number of restaurants to return.
 RADIUS = 8000 # Radius from the specified location in meters.
 OPEN_NOW = True # Returns restaurants that are open only at the current moment.
 PRICE = '1,2,3,4' # Price filter for restaurants (1 = $, 2 = $$...).
-RATING_FILTER = 3 # Rating filter for restaurants.
+RATING_FILTER = 3.5 # Rating filter for restaurants.
 # --------------------------------------------------------------------------
 
 default_location = 'Seattle'

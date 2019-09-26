@@ -11,11 +11,6 @@ from .models import ViewedRafts
 from .forms import SearchForm
 
 def home(request):
-    #ViewedRafts.objects.create(name=name, rating=rating, num_reviews=num_reviews, price=price,
-                               #address=address, city=city, state=state, zip_code=zip_code)
-
-    #rafts = ViewedRafts.objects.all()
-
     if request.GET.get('get-location'):
         return HttpResponse("clicked button")
     
