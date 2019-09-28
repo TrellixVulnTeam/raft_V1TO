@@ -19,4 +19,4 @@ class Raft:
         self.image_url = image_url 
 
     def __str__(self):
-        return self.name
+        return self.name + " - " + self.city

@@ -53,12 +53,10 @@ def find_rafts(city, cuisine=None):
             temp_raft = Raft(restaurant['name'], restaurant['rating'], restaurant['review_count'], restaurant['location'], restaurant['categories'], restaurant['price'], restaurant['image_url'])
             raft_list.append(temp_raft)
 
+    print(raft_list[0])
+    random.shuffle(raft_list)
+    print(raft_list[0])
     return raft_list
-
-# Generates a list of random indexes.
-def generate_indexes(raft_list):
-    num_rafts = len(raft_list)
-    return random.sample(range(num_rafts), num_rafts - 1)
 
 # Creates the arguments to be passed to the "search" view.
 def create_args(raft):

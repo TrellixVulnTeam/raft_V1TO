@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 import random
 import json
 
-from .raftYelp import find_rafts, generate_indexes, create_args
+from .raftYelp import find_rafts, create_args
 from .models import ViewedRafts
 
 from .forms import SearchForm
@@ -34,9 +34,7 @@ def search(request):
     if not raft_list: # Executes if no restaurants are found.
         return render(request, 'search.html', { 'form': form, 'name': 'NO RESTUARANTS FOUND.'})
         
-    random_indexes = generate_indexes(raft_list)
-    raft = raft_list[random_indexes[0]]
-    num_rafts = len(random_indexes) + 1
+    num_rafts = len(raft_list) + 1
 
     args = {
         'raft_list': json.dumps([raft.__dict__ for raft in raft_list], indent=4),
@@ -48,14 +46,7 @@ def search(request):
 
 # About Page View
 def about(request):
-    raft_list = find_rafts('seattle', 'chinese')
-    rafts_json = json.dumps([raft.__dict__ for raft in raft_list], indent=4)
-
-    args = {
-        'list': rafts_json
-    }
-
-    return render(request, 'about.html', args)
+    return render(request, 'about.html')
 
 # Contact Page View
 def contact(request):
