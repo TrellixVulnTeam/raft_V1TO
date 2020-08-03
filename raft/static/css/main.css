@@ -79,12 +79,12 @@ footer {
 }
 
 #term-form {
-    height: 50px;
+    height: 45px;
     font-size: 20px;
 }
 
 #location-form {
-    height: 50px;
+    height: 45px;
     font-size: 20px;
     font-weight: 700;
 }
@@ -92,7 +92,8 @@ footer {
 #search-button {
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
-    height: 50px;
+    height: 45px;
+    line-height: 22.5px;
     border: 3px solid #EECA00;
 }
 
